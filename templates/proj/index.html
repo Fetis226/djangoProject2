@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+      <meta charset="UTF-8">
+    <title>Продажа подвалов</title>
+    <link type="text/css" href="{% static 'proj/css/style.css' %}" rel="stylesheet" />
+  </head>
+  <body>
+  <button class="cart" id="cart">
+  <img class="cart__image" src="./images/cart.png" alt="Cart" />
+  <div class="cart__num" id="cart_num">0</div>
+</button>
+    <header>
+      <h1 class="prodazha">Продажа подвалов "BabyBuild"</h1>
+      <nav>
+        <ul>
+          <li class="onas">>Главная</li>
+          <li><a href="{% url 'onas'  %}">О нас</a></li>
+          <li><a href="{% url 'contact'  %}">Контакты</a></li>
+            <li><a href="{% url 'prods'  %}">Все продукты</a></li>
+            <li><a href="{% url 'AuthReg:login'  %}">Вход</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+                <h2>Лучшие предложения</h2>
+<div class="products">
+        <div class="product">
+          <h3 class="prhe">Жан ди ланье</h3>
+          <img src="{% static 'proj/img/device_img2.jpg' %}" alt="Подвал 1" width="400px" height="300px">
+          <p>Шикарные апартаменты в пригороде Москвы.</p>
+          <h3 class="podr"><a href="ppp1.html">Подробнее</a></h3>
+            </div>
+            <div class="product">
+          <h3 class="prhe">Подвал 2</h3>
+          <img src="{% static 'proj/img/device_img2.jpg' %}" alt="Подвал 1" width="400px" height="300px">
+          <p>Подвальное помещение с аномалией в виде плохого разрешения</p>
+                <h3 class="podr"><a href="ppp2.html">Подробнее</a></h3>
+                </div>
+    <div class="product">
+          <h3 class="prhe">Подвал 3</h3>
+          <img src="{% static 'proj/img/device_img2.jpg' %}" alt="Подвал 1" width="400px" height="300px">
+          <p>Подземный ангар, большая вместимость.</p>
+                    <h3 class="podr"><a href="ppp3.html">Подробнее</a></h3>
+    </div>
+    <div class="product">
+          <h3 class="prhe">Подвал 4</h3>
+          <img src="{% static 'proj/img/device_img2.jpg' %}" alt="Подвал 1" width="400px" height="300px">
+          <p>Подземный ангар, большая вместимость.</p>
+                    <h3 class="podr"><a href="ppp4.html">Подробнее</a></h3>
+    </div>
+    <div class="product">
+          <h3 class="prhe">Подвал 5</h3>
+          <img src="{% static 'proj/img/device_img2.jpg' %}" alt="Подвал 1" width="400px" height="300px">
+          <p>Подземный ангар, большая вместимость.</p>
+                    <h3 class="podr"><a href="ppp5.html">Подробнее</a></h3>
+    </div>
+    <div class="product">
+          <h3 class="prhe">Подвал 6</h3>
+          <img src="{% static 'proj/img/device_img2.jpg' %}" alt="Подвал 1" width="400px" height="300px">
+          <p>Подземный ангар, большая вместимость.</p>
+                    <h3 class="podr"><a href="ppp6.html">Подробнее</a></h3>
+        </div>
+
+</div>
+    </main>
+    <footer>
+      <p>&copy; 2023 Продажа подвалов</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="{% static '/style/components.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static '/style/main.css' %}" rel="stylesheet" />
+    <title>Art life</title>
+</head>
+<body>
+    <header>
+            <h1>Art Life</h1>
+            <nav>
+                <a href="{% url 'katalog' %}" class="nav_item">Каталог</a>
+                <a href="{% url 'index' %}" class="nav_item">Главная</a>
+                <a href="#" class="nav_item">Контакты</a>
+            </nav>
+            <a href="{% url "AuthReg:auth_check" %}"><img src="{% static "img/icon_aut.png" %}" alt="Регистрация"></a>
+    </header>
+    <main>
+        <section class="first_sect">
+            <div class="container">
+                <h1> Art Life - Строительная компания</h1>
+                <h1>Мы создаем неповторимые архитектурные<br>
+                    шедевры, сочетая искусство и строительство</h1>
+            </div>
+        </section>
+        <div class="vstavka"></div>
+        <section class="second_sect">
+            <h1 class="uslugH1"> Наши услуги</h1>
+            <div class="cont">
+                <div class="block_uslug">
+                    <h2> Дизайн</h2>
+                    <p> Создаем уникальный и
+                        эстетичный дизайн </p>
+                </div>
+                <div class="block_uslug">
+                    <h2> Строительство</h2>
+                    <p> Проффессиональная
+                        команда  строителей </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p> Лабораторная работа</p>
+        <p> Иванов Владислав и Соловьёв Дмитрий</p>
+        <p> ИСП/Р-22-11</p>
+
+    </footer>
+    
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>LogIn</title>
+</head>
+<body>
+{% load static %}
+{% block LogInMenu %}
+
+<div class="Login">
+<form action="{% url 'AuthReg:login' %}" method="POST">
+  <fieldset>
+    <legend>LogIn menu:</legend>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input class="btn btn-primary" type="submit" value="Авторизоваться">
+  </fieldset>
+    </form>
+</div>
+{% endblock %}
+<h3><a href="{% url 'index' %}">Back</a></h3>
+<h3><a href="{% url 'AuthReg:registration' %}">Регистрация</a></h3>
+</body>
+</html>

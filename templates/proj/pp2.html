@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link type="text/css" href="{% static 'proj/css/style.css' %}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>О нас</title>
+</head>
+<body>
+<button class="cart" id="cart">
+  <img class="cart__image" src="./images/cart.png" alt="Cart" />
+  <div class="cart__num" id="cart_num">0</div>
+</button>
+<header>
+      <h1 class="prodazha">Продажа подвалов "BabyBuild"</h1>
+      <nav>
+        <ul>
+            <li> <a href="{% url 'index' %}">Главная</a></li>
+          <li class="onas">>О нас</li>
+          <li><a href="{% url 'contact'  %}">Контакты</a></li>
+            <li><a href="{% url 'prods' %}">Все продукты</a></li>
+            <li><a href="{% url 'AuthReg:login'  %}">Вход</a></li>
+        </ul>
+      </nav>
+    </header>
+<div class="zag">
+    <h3>Вам интересны помещения подвального типа, для различного функционала и в удобных местах?</h3>
+    <h3>Вам повезло, мы, компания "BabyBuild", готовы представить вам обширный ассортимент подвалов</h3>
+    dasdsdas
+</div>
+</body>
+</html>

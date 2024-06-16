@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" href="{% static '/style/components.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static '/style/user_cabinet.css' %}" rel="stylesheet" />
+    <title>Art Life</title>
+</head>
+<body>
+    <header>
+            <h1>Art Life</h1>
+            <nav>
+                <a href="{% url 'katalog' %}" class="nav_item">Каталог</a>
+                <a href="{% url 'index' %}" class="nav_item">Главная</a>
+                <a href="#" class="nav_item">Контакты</a>
+            </nav>
+            <a href="{% url "AuthReg:auth_check" %}"><img src="{% static "img/icon_aut.png" %}" alt="Регистрация"></a>
+    </header>
+    <main>
+        <div class="container">
+            <div class="info_profil">
+                <h2>Ваши данные</h2>
+                <p> {{ user.first_name }} {{ user.last_name }} </p>
+                <p> {{ user.email }}</p>
+                <p> {{ user.phone }}</p>
+            </div>
+            <div class="vstavka"> </div>
+            <div class="zakaz">
+                <h3><a href="{% url 'AuthReg:zayavka' %}">Отправить заявку</a></h3>
+                <h2> Ваши заказы</h2>
+
+                <table>
+                    <tr><th>Тип работ</th> <th> Цена</th><th>Комментарий</th><th> Статус</th></tr>
+                    <tr> <th> Ремонт</th> <th> 5200</th><th> Чтобы не было слышно соседней</th><th> В процессе</th></tr>
+
+                </table>
+
+
+
+                
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <p> Лабораторная работа</p>
+        <p> Иванов Владислав и Соловьёв Дмитрий</p>
+        <p> ИСП/Р-22-11</p>
+    </footer>
+    
+</body>
+</html>

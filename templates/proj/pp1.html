@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" href="{% static 'proj/css/style.css' %}" rel="stylesheet" />
+</head>
+<body>
+<header>
+    <button class="cart" id="cart">
+  <img class="cart__image" src="./images/cart.png" alt="Cart" />
+  <div class="cart__num" id="cart_num">0</div>
+</button>
+      <h1 class="prodazha">Продажа подвалов "BabyBuild"</h1>
+      <nav>
+        <ul>
+            <li> <a href="{% url 'index' %}">Главная</a></li>
+          <li><a href="{% url 'onas'  %}">О нас</a></li>
+          <li><a href="{% url 'contact'  %}">Контакты</a></li>
+            <li class="onas">>Все продукты</li>
+            <li><a href="{% url 'AuthReg:login'  %}">Вход</a></li>
+        </ul>
+      </nav>
+    </header>
+</li>
+</ul>
+<div class="productSS">
+    {% for el in news %}
+        <div class="productsS">
+        <img src='{% static 'proj/img/device_img2.jpg' %}', width="250px", height="200px">
+            <p>{{ el.announce }}</p>
+            <p>{{ el.title }}</p>
+            <button>Add to Cart</button>
+        </div>
+        {% endfor %}
+</div>
+</body>
+</html>

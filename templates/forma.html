@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" href="{% static '/style/components.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static '/style/forma.css' %}" rel="stylesheet" />
+    <title>Заявка Art Life</title>
+</head>
+<body>
+    <header>
+            <h1>Art Life</h1>
+            <nav>
+                <a href="{% url 'katalog' %}" class="nav_item">Каталог</a>
+                <a href="{% url 'index' %}" class="nav_item">Главная</a>
+                <a href="#" class="nav_item">Контакты</a>
+            </nav>
+            <a href="{% url "AuthReg:auth_check" %}"><img src="{% static "img/icon_aut.png" %}" alt="Регистрация"></a>
+    </header>
+    <main>
+        <div class="space">
+        </div>
+        <div class="container">
+            <div class="block_form">
+                <h1> Заполните форму и мы с вами свяжемся</h1>
+                <form action="{% url 'AuthReg:zayavka' %}" method="POST">
+                        {% csrf_token %}
+                    <input placeholder="Имя"  type="text" class="form-control py4" name="first_name"><br><br>
+                    <input placeholder="Фамилия" type="text" class="form-control py4" name="last_name"><br><br>
+                    <input placeholder="Почта"  type="email" class="form-control py4" name="email"><br><br>
+                    <input placeholder="Номер телефона"  type=" number" class="form-control py4" name="phone"><br><br>
+                    <input type="checkbox" class="form-control py4" name="ur_lico">
+                    <label for="checkbox">Юридическое лицо</label><br><br>
+                    {{ form.work_type }}
+                    <button type="submit"> Отправить </button>
+                </form>
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

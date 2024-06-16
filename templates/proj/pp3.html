@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <link type="text/css" href="{% static 'proj/css/style.css' %}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <title>О нас</title>
+</head>
+<button class="cart" id="cart">
+  <img class="cart__image" src="./images/cart.png" alt="Cart" />
+  <div class="cart__num" id="cart_num">0</div>
+</button>
+<body>
+<header>
+      <h1 class="prodazha">Продажа подвалов "BabyBuild"</h1>
+      <nav>
+        <ul>
+            <li> <a href="{% url 'index' %}">Главная</a></li>
+            <li><a href="{% url 'onas' %}">О нас</a></li>
+          <li class="onas">>Контакты</li>
+            <li><a href="{% url 'prods' %}">Все продукты</a></li>
+            <li><a href="{% url 'AuthReg:login'  %}">Вход</a></li>
+        </ul>
+      </nav>
+    </header>
+       <h4 class="contact">Телефон: +7(999)869 82 27</h4>
+      <h4 class="contact">Адрес: Тепличная ул., 7А, Подольск, Московская обл., 142134</h4>
+      <h4 class="contact"> Email: info@podvali.ru</h4>
+    <div class="goog">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2261.7132349918907!2d37.5531303!3d55.4676657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x414aa9e1ab070f43%3A0xa034daab7c68f1c1!2z0J_RgNC-0LTQsNC20LAg0L_QvtC00LLQsNC70YzQvdGL0YUg0L_QvtC80LXRidC10L3QuNC5ICJCYWJ5QnVpbGQi!5e0!3m2!1sru!2sru!4v1678360147547!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+</body>
+</html>

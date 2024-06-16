@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+{% if request.user.is_staff %}
+        <p>Welcome {{ user.username }} </p>
+
+<form enctype="multipart/form-data" action="{% url 'AuthReg:add_tovars' %} "  method="POST">
+  {% csrf_token %}
+    {{ form.as_p }}
+<button type="submit">Добавить</button>
+</form>
+    <a href="{% url "AuthReg:ADMIN_panel" %}"><h2>back</h2></a>
+{% endif %}
+</body>
+</html>

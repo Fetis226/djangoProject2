@@ -1,0 +1,53 @@
+main {
+    height: 100%;
+    background-color: #171515;
+    padding-bottom: 150px;
+}
+#katalog_Heading{
+    display: flex;
+    justify-content: center;
+}
+#katalog_h2 {
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.line_block {
+    display: flex;
+    justify-content: space-around;
+}
+.block {
+    background-color: #FAFAFA;
+    border-radius: 10px;
+    max-width: 442px;
+    max-height: 364px;
+    text-align: center;
+}
+.block h2 {
+    color: black;
+    font-size: 36px;  
+    font-weight: 700;
+    word-wrap: break-word;
+}
+.block p{
+    color: black; 
+    font-size: 24px;
+    font-weight: 700; 
+    word-wrap: break-word;
+}
+.block button {
+    background: #1E1E1E;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#btn_block {
+    color: white;
+    font-size: 24px;
+    font-family: Open Sans;
+    font-weight: 700;
+    word-wrap: break-word;
+    padding: 11px 80px;
+    text-decoration: none;
+    text-align: center;
+}

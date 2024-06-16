@@ -1,0 +1,26 @@
+main {
+    background-color: #171515;
+}
+.info_profil{
+    padding-top: 50px;
+    text-align: center;
+}
+.info_profil h2{
+    font-size: 40px;
+}
+.info_profil p{
+    padding-top: 30px;
+}
+.vstavka {
+    content: "";
+    height: 100px;
+    width: 100%;
+}
+.zakaz h2 {
+    text-align: center;
+}
+table {
+    display: flex;
+    justify-content: center;
+    
+}

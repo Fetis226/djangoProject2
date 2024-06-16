@@ -1,0 +1,48 @@
+.first_sect {
+    background-image: url(../img/bg1.png);
+    width: 100%;
+    height: 820px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+.first_sect  h1 {
+    padding-bottom: 50px;
+}
+
+.vstavka{
+    background-color: #171515;
+    content: "";
+    width: 100%;
+    height: 125px;
+}
+.second_sect {
+    background-image: url(../img/bg2.png);
+    width: 100%;
+    height: 990px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+
+}
+.block_uslug{
+    background-color: #1E1E1E;
+    border-radius: 19px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 455px;
+    height: 261px;
+
+}
+.cont{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+}
+.uslugH1{
+    color: #1E1E1E;
+    padding-top: 50px;
+}

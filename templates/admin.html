@@ -1,0 +1,85 @@
+{% load static %}
+<html lang="ru">
+<head>
+	<meta charset="utf-8" />
+	<title>Админ-панель</title>
+	<meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; width=device-width;">
+    <link rel="stylesheet" href="{% static "style/admin.css" %}">
+</head>
+
+<body>
+{% if request.user.is_staff %}
+<div class="table-title">
+<h3>Админ панель</h3>
+    <a href="{% url "AuthReg:user_profile" %}"><h3>Профиль</h3></a>
+</div>
+<table class="table-fill">
+<thead>
+<tr>
+    <th class="text-left" >ФИО клиента</th>
+    <th class="text-left">Номер телефона</th>
+    <th class="text-left">Почта</th>
+    <th class="text-left">Тип работы</th>
+    <th class="text-left">дата</th>
+    <th class="text-left">Цена</th>
+    <th class="text-left">Комментарий</th>
+    <th class="text-left"></th>
+    <th class="text-left"></th>
+</tr>
+</thead>
+<tbody class="table-hover">
+{% for el in zayavki %}
+<tr>
+    <td data-th="FIO">{{ el.first_name }} {{ el.last_name }}</td>
+    <td data-th="phone">{{ el.phone }}</td>
+    <td data-th="email">{{ el.email }}</td>
+    <td data-th="type">{{ el.work_type }}</td>
+    <td data-th="data">12.11.23</td>
+    <td data-th="price">$460,935,665</td>
+    <td data-th="comment">ХОЧУ КАЛЬЯННУЮ</td>
+    <form action="{% url 'AuthReg:AcceptZayavka' el.pk %}" method="POST">
+  {% csrf_token %}
+    <th class="del"><button type="submit" name="{{ el.id }}">Принять</button></th>
+        </form>
+    <form action="{% url 'AuthReg:deleteZayavka' el.pk %}" method="POST">
+  {% csrf_token %}
+    <th class="del"><button type="submit" name="{{ el.id }}">Удалить</button></th>
+        </form>
+{% endfor %}
+
+
+</tbody>
+</table>
+<a href="{% url "katalog" %}"><h3>Каталог</h3></a>
+<a href="{% url "AuthReg:add_tovars" %}"><h3>Добавить товар</h3></a>
+    <table class="table-fill">
+    <thead>
+    <tr>
+        <th class="text-left" >Название</th>
+    <th class="text-left">Площадь</th>
+    <th class="text-left">Фото</th>
+        <th class="text-left">Цена</th>
+        <th class="text-left"></th>
+    <th class="text-left"></th>
+    </tr>
+    </thead>
+    <tbody class="table-hover">
+    {% for el in tovari %}
+<tr>
+    <td data-th="name">{{ el.name }}</td>
+    <td data-th="ploshad">{{ el.ploshad }}</td>
+    <td data-th="image">{{ el.image }}</td>
+    <td data-th="cost">{{ el.cost }}</td>
+        <form action="{% url 'AuthReg:deleteTovar' el.pk %}" method="POST">
+  {% csrf_token %}
+    <th class="del"><button type="submit" name="{{ el.id }}">Delete</button></th>
+        </form>
+
+{% endfor %}
+</table>
+    {% else %}
+    <p>Fuck off</p>
+{% endif %}
+
+
+  </body>

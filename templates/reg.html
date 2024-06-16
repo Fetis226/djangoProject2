@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link type="text/css" href="{% static '/style/components.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static '/style/reg.css' %}" rel="stylesheet" />
+    <title>Art Life</title>
+</head>
+<body>
+    <header>
+            <h1>Art Life</h1>
+            <nav>
+                <a href="{% url 'katalog' %}" class="nav_item">Каталог</a>
+                <a href="{% url 'index' %}" class="nav_item">Главная</a>
+                <a href="#" class="nav_item">Контакты</a>
+            </nav>
+            <a href="{% url "AuthReg:auth_check" %}"><img src="{% static "img/icon_aut.png" %}" alt="Регистрация"></a>
+    </header>
+<main>
+        <div class="content">
+            <div class="menu_reg">
+                <form action="{% url 'AuthReg:registration' %}" method="POST">
+                        {% csrf_token %}
+                <div class="line">
+                    <div class="form">
+                        <input placeholder="Имя"  type="text" class="form-control py4" name="first_name">
+                        <input placeholder="Фамилия" type="text" class="form-control py4" name="last_name">
+                    </div>
+                </div>
+                <div class="line">
+                        <div class="form">
+                            <input placeholder="Почта"  type="email" class="form-control py4" name="email">
+                            <input placeholder="Номер телефона"  type="number" class="form-control py4" name="phone">
+
+                        </div>
+                </div>
+                <div class="line">
+                    <div class="form">
+                        <input type="password" placeholder="Пароль" class="form-control py4" name="password1">
+                        <input type="password" placeholder="Пароль еще раз" class="form-control py4" name="password2">
+
+                    </div>
+                </div>
+                <div class="line">
+                    <input placeholder="Username"  type="text" class="form-control py4" name="username">
+                    <<button>Регистрация</button>>
+                </div>
+                </form>
+            </div>
+        </div>
+
+
+
+    </main>
+    <footer>
+        <p> Лабораторная работа</p>
+        <p> Иванов Владислав и Соловьёв Дмитрий</p>
+        <p> ИСП/Р-22-11</p>
+    </footer>
+
+    
+</body>
+</html>

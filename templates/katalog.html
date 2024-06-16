@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link type="text/css" href="{% static '/style/components.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static '/style/katalog.css' %}" rel="stylesheet" />
+    <title>Каталог</title>
+</head>
+<body>
+    <header>
+            <h1>Art Life</h1>
+            <nav>
+                <a href="{% url 'katalog' %}" class="nav_item">Каталог</a>
+                <a href="{% url 'index' %}" class="nav_item">Главная</a>
+                <a href="#" class="nav_item">Контакты</a>
+            </nav>
+            <a href="{% url "AuthReg:auth_check" %}"><img src="{% static "img/icon_aut.png" %}" alt="Регистрация"></a>
+    </header>
+    <main>
+        <div class="container">
+            <h1 id="katalog_Heading"> Наш Каталог</h1>
+
+            <div class="line_block">
+            {% for el in tovari %}
+                <div class="block">
+
+
+                    <h2> {{ el.name }} </h2>
+                    <img src="{{ el.image }}" alt="картинка" width="382" height="193">
+                    <p> {{ el.ploshad }}  {{ el.cost }}</p>
+                    <button><a id="btn_block"  href="{% url 'AuthReg:auth_check' %}">Купить</a></button>
+
+                </div>
+                {% endfor %}
+
+
+    
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        <p> Лабораторная работа</p>
+        <p> Иванов Владислав и Соловьёв Дмитрий</p>
+        <p> ИСП/Р-22-11</p>
+
+    </footer>
+
+        
+</body>
+</html>
